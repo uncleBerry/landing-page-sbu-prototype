@@ -1,0 +1,6 @@
+{
+  "name": "Landing Page Foundation",
+  "description": "Enterprise-ready Vite & React technical architecture foundation including custom directory structures, Sanity CMS configurations, and Framer Motion integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
