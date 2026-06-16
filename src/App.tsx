@@ -60,6 +60,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [usePreviewMode, setUsePreviewMode] = useState(false);
 
+  console.log('CMS DATA STATE', cmsData);
   console.log('CMS DATA', cmsData);
   console.log('WHY CHOOSE', cmsData?.whyChooseUsSection);
   console.log('WORKFLOW', cmsData?.workflow);
@@ -68,6 +69,7 @@ export default function App() {
     setIsLoading(true);
     fetchLandingPageCmsData({ usePreview: usePreviewMode })
       .then(data => {
+        console.log('FETCH RESULT', data);
         setCmsData(data);
         console.log('[APP RECEIVED DATA]', data);
         setIsLoading(false);

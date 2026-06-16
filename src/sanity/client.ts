@@ -112,6 +112,7 @@ export async function fetchLandingPageCmsData(options?: {
     console.log('[SANITY FETCH START]');
     const rawData = await clientToUse.fetch<any>(LANDING_PAGE_QUERY);
     console.log('[SANITY RAW RESPONSE]', rawData);
+    console.log('RAW SANITY RESPONSE', rawData);
 
     const mappedBenefits = (rawData?.benefitsSection?.benefitsList || FALLBACK_CMS_DATA.benefitsSection.benefitsList).map((b: any) => ({
       ...b,
@@ -208,7 +209,10 @@ export async function fetchLandingPageCmsData(options?: {
       siteSettings: { ...FALLBACK_CMS_DATA.siteSettings, ...(rawData?.siteSettings || {}) },
     };
 
+    const mappedData = mergedData;
+    console.log('MAPPED DATA', mappedData);
     console.log('[SANITY MERGED DATA]', mergedData);
+    console.log('MAPPED CMS DATA', mergedData);
     return mergedData;
   } catch (error) {
     console.error('[SANITY FETCH ERROR]', error);
